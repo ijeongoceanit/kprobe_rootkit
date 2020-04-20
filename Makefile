@@ -1,10 +1,8 @@
 obj-m += jkit.o
 
-MODULES = jkit.ko
+MODULES = jkit.o
 
-all: clean $(MODULES)
-
-$(MODULES):
+all:
 	make -C /lib/modules/4.9.0-12-amd64/build M=$(PWD) modules
 
 clean:
